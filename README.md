@@ -3,7 +3,7 @@
 ## Technologie
 
 * Language : PHP
-* Framework : Synfony 2.8.1
+* Framework : laravel 5
 * Type : Site Web ECommerce
 
 ## Description
