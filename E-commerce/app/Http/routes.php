@@ -10,10 +10,14 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return view('homegarde');
 });
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +35,3 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController'
-]);

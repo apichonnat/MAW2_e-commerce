@@ -1,10 +1,11 @@
 window_sizes 1680 1028 347 1327 700 82
 diagrams
   active  usecasediagram_ref 128010 // Diag
-    1057 664 100 4 0 0
+    1147 806 100 4 0 0
 end
 show_stereotypes
-selected usecaseview_ref 128010 // UC_View
+selected 
+package_ref 129 // uml_e-commerce
 open
   usecaseview_ref 128010 // UC_View
 end

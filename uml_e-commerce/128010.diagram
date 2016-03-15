@@ -1,39 +1,56 @@
-format 67
+format 76
 
 classcanvas 128010 class_ref 128010 // Invite
   class_drawing_mode default show_context_mode default show_stereotype_properties default
-  xyz 379 38 2000
+  xyz 239 57 2000
 end
 usecasecanvas 128138 usecase_ref 128010 // subscribe
-  xyzwh 704 61 3005 64 32 label_xy 712 91
+  xyzwh 710 90 3005 64 32 label_xy 718 120
 end
 classcanvas 129162 class_ref 128138 // Inscrit
   class_drawing_mode default show_context_mode default show_stereotype_properties default
   xyz 383 293 2000
 end
 usecasecanvas 129418 usecase_ref 128266 // Add_cart
-  xyzwh 190 299 3005 64 32 label_xy 200 330
+  xyzwh 164 344 3005 64 32 label_xy 174 375
 end
 usecasecanvas 130442 usecase_ref 128394 // order
-  xyzwh 25 311 3005 64 32 label_xy 45 343
+  xyzwh 14 266 3005 64 32 label_xy 34 298
 end
 usecasecanvas 132106 usecase_ref 128522 // view_order
   xyzwh 23 149 3005 64 32 label_xy 27 184
 end
 usecasecanvas 132618 usecase_ref 128650 // Navigate_galerie
-  xyzwh 739 206 3005 64 32 label_xy 729 242
+  xyzwh 594 128 3005 64 32 label_xy 584 164
 end
-usecasecanvas 133002 usecase_ref 128778 // Connect
-  xyzwh 212 414 3005 64 32 label_xy 224 446
-end
-usecasecanvas 133258 usecase_ref 128906 // Comment_article
-  xyzwh 613 374 3005 64 32 label_xy 606 406
+usecasecanvas 133258 usecase_ref 128906 // Comment
+  xyzwh 269 383 3005 64 32 label_xy 279 415
 end
 usecasecanvas 133770 usecase_ref 129034 // view_article
-  xyzwh 531 182 3005 64 32 label_xy 535 214
+  xyzwh 585 20 3005 64 32 label_xy 589 52
 end
 usecasecanvas 134154 usecase_ref 129162 // Contact
-  xyzwh 189 155 3005 64 32 label_xy 202 187
+  xyzwh 491 160 3005 64 32 label_xy 504 192
+end
+classcanvas 135306 class_ref 134666 // Admin
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 892 406 2000
+end
+classcanvas 135434 class_ref 134666 // Admin
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 470 289 2000
+end
+usecasecanvas 135690 usecase_ref 135690 // crud_articles
+  xyzwh 562 415 3005 64 32 label_xy 564 447
+end
+usecasecanvas 135946 usecase_ref 135818 // crud_user
+  xyzwh 640 359 3005 64 32 label_xy 648 391
+end
+usecasecanvas 136074 usecase_ref 135946 // crud_order
+  xyzwh 857 370 2000 64 32 label_xy 863 402
+end
+usecasecanvas 136202 usecase_ref 135946 // crud_order
+  xyzwh 653 252 3005 64 32 label_xy 659 284
 end
 line 129034 ----
   from ref 128010 z 3006 to ref 128138
@@ -45,25 +62,27 @@ relationcanvas 131978 relation_ref 128266 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 simplerelationcanvas 132362 simplerelation_ref 128010
-  from ref 130442 z 3006 stereotype "<<extend>>" xyz 110.5 319 3000 to ref 129418
+  from ref 130442 z 3006 stereotype "<<extend>>" xyz 92.5 320 3000 to ref 129418
 end
 simplerelationcanvas 132490 simplerelation_ref 128138
-  from ref 132106 z 3006 stereotype "<<extend>>" xyz 26 245 3000 to ref 130442
+  from ref 132106 z 3006 stereotype "<<extend>>" xyz 19.5 222.5 3000 to ref 130442
 end
-line 132746 ----
-  from ref 129162 z 3006 to ref 132618
 line 132874 ----
   from ref 128010 z 3006 to ref 132618
-line 133130 ----
-  from ref 129162 z 3006 to ref 133002
 line 133642 ----
   from ref 129162 z 3006 to ref 133258
 line 133898 ----
   from ref 128010 z 3006 to ref 133770
-line 134026 ----
-  from ref 129162 z 3006 to ref 133770
-line 134282 ----
-  from ref 134154 z 3006 to ref 129162
 line 134794 ----
   from ref 134154 z 3006 to ref 128010
+line 135050 ----
+  from ref 130442 z 3006 to ref 129162
+line 135178 ----
+  from ref 132106 z 3006 to ref 129162
+line 135818 ----
+  from ref 135690 z 3006 to ref 135434
+line 136330 ----
+  from ref 135946 z 3006 to ref 135434
+line 136458 ---- decenter_end 573
+  from ref 136202 z 3006 to ref 135434
 end

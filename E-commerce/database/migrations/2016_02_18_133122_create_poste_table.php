@@ -12,9 +12,19 @@ class CreatePosteTable extends Migration
      */
     public function up()
     {
+
+        //Create table country
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name');
+            $table->integer('tva');
+
+        });
+
+        //Create table addresses
+
+        Schema::create('posts', function(Blueprint $table){
+           $table->foreign('')
         });
     }
 
