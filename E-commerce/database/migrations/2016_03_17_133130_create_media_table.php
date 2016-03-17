@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdressesTable extends Migration
+class CreateMediaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,12 @@ class CreateAdressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('adresses', function (Blueprint $table) {
+        Schema::create('media', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('street');
-            $table->integer('nb_street');
-            $table->string('city');
-            $table->integer('npa');
-            $table->integer('country_id')->unsigned();
+            $table->string('name');
+            $table->string('path');
+            $table->text('description')->nullable();
+            $table->integer('type_media_id')->unsigned();
         });
     }
 
@@ -29,6 +28,6 @@ class CreateAdressesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('adresses');
+        Schema::drop('media');
     }
 }

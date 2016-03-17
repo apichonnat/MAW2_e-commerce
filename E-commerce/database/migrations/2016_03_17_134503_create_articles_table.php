@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdressesTable extends Migration
+class CreateArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,11 @@ class CreateAdressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('adresses', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('street');
-            $table->integer('nb_street');
-            $table->string('city');
-            $table->integer('npa');
-            $table->integer('country_id')->unsigned();
+            $table->enum('state', ['sold, available, reserve']);
+            $table->integer('category_id')->unsigned();
+            $table->timestamps();
         });
     }
 
@@ -29,6 +27,6 @@ class CreateAdressesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('adresses');
+        Schema::drop('articles');
     }
 }
