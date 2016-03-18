@@ -18,15 +18,6 @@ Route::get('/', function(){
 Route::get('/', 'home@homegarde');
 Route::get('home', 'home@index');
 
-
-//Route::get('article', 'articles@index');//articles = controller / index = action(nom fonction dans le controller)
-
-
-Route::resource('article', 'ArticlesController');//resource, cree automatiquement toutes les routes crud
-//               url     ,  controller
-Route::resource('user', 'UsersController');
-
-Route::resource('order', 'OrdersController');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -38,8 +29,16 @@ Route::resource('order', 'OrdersController');
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => ['web']], function ()
+{
+    //Route::get('article', 'articles@index');//articles = controller / index = action(nom fonction dans le controller)
+    Route::resource('article', 'ArticlesController', ['only' => ['index', 'show']]);//resource, cree automatiquement toutes les routes crud
+//               url     ,  controller
+    Route::resource('user', 'UsersController');
+
+    Route::resource('order', 'OrdersController');
 });
+
+
 
 

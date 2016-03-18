@@ -13,7 +13,7 @@ class CreateArticleMediaTable extends Migration
     public function up()
     {
         Schema::create('article_media', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->primary();
             $table->integer('media_id')->unsigned();
             $table->integer('article_id')->unsigned();
         });

@@ -13,7 +13,7 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->primary();
             $table->enum('state', ['sold, available, reserve']);
             $table->integer('category_id')->unsigned();
             $table->timestamps();

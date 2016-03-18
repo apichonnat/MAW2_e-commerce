@@ -13,7 +13,7 @@ class CreateTypeMediaTable extends Migration
     public function up()
     {
         Schema::create('type_media', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->primary();
             $table->enum('name', ['picture','movie','music']);
         });
     }

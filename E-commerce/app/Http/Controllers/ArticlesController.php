@@ -13,6 +13,10 @@ class ArticlesController extends Controller
     {
         echo "accueil view article";
     }
+    public function show()
+    {
+        echo "accueil show article";
+    }
 
     public function destroy($article)
     {

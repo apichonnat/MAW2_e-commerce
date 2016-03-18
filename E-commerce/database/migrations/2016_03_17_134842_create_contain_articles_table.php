@@ -13,7 +13,7 @@ class CreateContainArticlesTable extends Migration
     public function up()
     {
         Schema::create('contain_articles', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->primary();
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->mediumText('description');
