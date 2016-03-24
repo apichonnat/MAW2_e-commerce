@@ -34,7 +34,7 @@ Route::group(['middleware' => ['web']], function ()
     //Route::get('article', 'articles@index');//articles = controller / index = action(nom fonction dans le controller)
     Route::resource('article', 'ArticlesController', ['only' => ['index', 'show']]);//resource, cree automatiquement toutes les routes crud
 //               url     ,  controller
-    Route::resource('user', 'UsersController');
+    Route::resource('users', 'UsersController');
 
     Route::resource('order', 'OrdersController');
 });
