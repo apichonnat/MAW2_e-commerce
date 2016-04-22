@@ -14,7 +14,10 @@ class Address extends Model {
     {
         return $this->belongsTo(Country::class);
     }
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 
-
-
+    public $timestamps = false;
 }

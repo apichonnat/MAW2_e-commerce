@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Address;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,13 +13,62 @@ class UsersController extends Controller
 {
     public function create()
     {
-        return view("form/formcreateuser");
+        return view("users/create");
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        echo "je viens de cree un user";
-        echo $_POST["firstname"];
-        echo $_POST["lastname"];
+        $addresse = new Address();
+
+        $addresse->street = $request->rue;
+        $addresse->nb_street = $request->numrue;
+        $addresse->city = $request->ville;
+        $addresse->npa = $request->npa;
+
+        $addresse->save();
+
+        $user = new User();
+
+        $user->first_name = $request->firstname;
+        $user->last_name = $request->lastname;
+        $user->mail = $request->mail;
+        $user->pseudo = $request->pseudo;
+        $user->address_id = $addresse->id;
+        $user->save();
+
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
