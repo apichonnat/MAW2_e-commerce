@@ -37,7 +37,7 @@ class UsersController extends Controller
         $user->save();
 
 
-
+        return view("home");
     }
 }
 

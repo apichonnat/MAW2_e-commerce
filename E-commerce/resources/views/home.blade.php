@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa cumque, cupiditate doloribus esse fugit illo incidunt iusto maiores nam nostrum numquam officia porro quaerat quod, similique sit ut veniam.
                 </div>
             </div>
         </div>

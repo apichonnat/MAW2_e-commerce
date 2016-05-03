@@ -15,8 +15,7 @@ Route::get('/', function(){
     return view('homegarde');
 });
 */
-Route::get('/', 'home@homegarde');
-Route::get('home', 'home@index');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,20 +30,25 @@ Route::get('home', 'home@index');
 
 Route::group(['middleware' => ['web']], function ()
 {
+    Route::get('/', 'home@homegarde');
+
+    Route::get('home', 'home@index');
     //Route::get('article', 'articles@index');//articles = controller / index = action(nom fonction dans le controller)
-    Route::resource('article', 'ArticlesController', ['only' => ['index', 'show']]);//resource, cree automatiquement toutes les routes crud
+    Route::resource('articles', 'ArticlesController');//resource, cree automatiquement toutes les routes crud
 //               url     ,  controller
     Route::resource('users', 'UsersController');
 
     Route::resource('order', 'OrdersController');
-});
 
-
-
-
-
-Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
-    Route::get('/home', 'HomeController@index');
+//
+//    Route::get('/home', 'HomeController@index');
 });
+
+
+
+
+
+//Route::group(['middleware' => 'web'], function () {
+
+//});

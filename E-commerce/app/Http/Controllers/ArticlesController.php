@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,8 +12,23 @@ class ArticlesController extends Controller
 {
     public function index()
     {
-        echo "accueil view article";
+//        return "toto";
+        return view('articles.index');
+
     }
+
+    public function create()
+    {
+        $list_des_trucs = Category::all();
+        return view('articles.create', ['list_des_trucs' => $list_des_trucs]);
+    }
+
+
+    public function store(Request $data)
+    {
+
+    }
+
     public function show()
     {
         echo "accueil show article";
@@ -23,8 +39,5 @@ class ArticlesController extends Controller
         //TODO: destroy selected article
     }
 
-    public function create()
-    {
-        echo "je cree";
-    }
+
 }
