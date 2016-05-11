@@ -12,5 +12,5 @@ class ArticleMedia extends Model {
     protected $fillable = ['id', 'media_id', 'article_id'];
 
 
-
+    public $timestamps = false;
 }

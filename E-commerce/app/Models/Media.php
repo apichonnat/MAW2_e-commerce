@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Medium extends Model {
+class Media extends Model {
 
     /**
      * Generated
@@ -12,5 +12,6 @@ class Medium extends Model {
     protected $fillable = ['id', 'name', 'path', 'description', 'type_media_id'];
 
 
+    public $timestamps = false;
 
 }

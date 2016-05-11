@@ -12,5 +12,5 @@ class TypeMedia extends Model {
     protected $fillable = ['id', 'name'];
 
 
-
+    public $timestamps = false;
 }
