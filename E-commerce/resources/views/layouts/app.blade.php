@@ -23,6 +23,18 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        .box{
+            border: solid 1px black;
+            max-width: 400px;
+            float: left;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .box img {
+            max-width: 350px;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -47,7 +59,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ route('articles.index') }}">Galerie</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -56,6 +68,7 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/users/create') }}">Register</a></li>
+                        <li><a href="{{ route('admin.articles.index')}}">Add articles</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

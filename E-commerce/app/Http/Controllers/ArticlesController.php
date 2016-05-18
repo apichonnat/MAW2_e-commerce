@@ -20,84 +20,16 @@ class ArticlesController extends Controller
 
     public function index()
     {
+        $articles = Article::all();
+
+//        $article = Article::find(20);
+//        dd($article->media[0]->path);
+        //var_dump($articles);
+
 //        return "toto";
-        return view('articles.index');
+        return view('articles.index', ['articles' => $articles]);
 
     }
-
-    public function create()
-    {
-        $categories = Category::all();
-
-        foreach($categories as $value)
-        {
-            $data[] = array($value->id => $value->name);
-
-        }
-//        var_dump($data);
-        $language = Language::all();
-
-        foreach($language as $value)
-        {
-            $lang[] = array($value->id => $value->name);
-        }
-
-        $typeMedia = TypeMedia::all();
-
-        foreach($typeMedia as $value)
-        {
-            $typeM[] = array($value->id => $value->name);
-        }
-
-        return view('articles.create', ['data' => $data, 'language' => $lang, 'type_media' => $typeM]);
-    }
-
-
-    public function store(Request $data)
-    {
-        $article = new Article();
-
-        $article->state = "reserve";
-        $article->category_id = $data->category;
-
-        $article->save();
-
-        $content_article = new ContainArticle();
-
-        $content_article->title = $data->title;
-        $content_article->subtitle = $data->subtile;
-        $content_article->description = $data->description;
-        $content_article->language_id = $data->language;
-        $content_article->article_id = $article->id;
-
-        $content_article->save();
-
-        $name = $data->file('image')->getClientOriginalName();
-        $data->file('image')->move(base_path().'/public/images/', $name);
-
-        $articleMedia = new ArticleMedia();
-        $media = new Media();
-
-        $media->name = $data->file('image')->getClientOriginalName();
-        $media->path = base_path().'/public/images/';
-        $media->type_media_id = $data->typeImage;
-        $media->description = $data->desc;
-
-        $media->save();
-
-        $articleMedia->media_id = $media->id;
-        $articleMedia->article_id = $article->id;
-
-        $articleMedia->save();
-    }
-
-//    public function storeLanguage()
-//    {
-//
-//    }
-
-
-
 
     public function show()
     {

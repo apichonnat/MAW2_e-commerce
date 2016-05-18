@@ -4,7 +4,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <p><h2>Création nouvel article</h2></p>
-        {!! Form::open(['route' => 'articles.store', 'enctype' => 'multipart/form-data']) !!}
+        {!! Form::open(['route' => 'admin.articles.store', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {!! Form::label('title', 'Titre') !!}
             {!! Form::text('title', '', ['class' => 'form-control']) !!}
@@ -50,7 +50,14 @@
             {!! Form::submit('Submit', ['class' => 'btn btn-default']) !!}
         </div>
         {!! Form::close() !!}
-    </div>
+
+
+
+
+
+
+
+
 
 
     <div class="col-md-2"></div>

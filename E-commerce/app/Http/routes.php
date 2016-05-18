@@ -34,11 +34,15 @@ Route::group(['middleware' => ['web']], function ()
 
     Route::get('home', 'home@index');
     //Route::get('article', 'articles@index');//articles = controller / index = action(nom fonction dans le controller)
-    Route::resource('articles', 'ArticlesController');//resource, cree automatiquement toutes les routes crud
-    Route::group(['namespace' => 'Admin'], function()
+    Route::resource('articles', 'ArticlesController', ['only'=>['index', 'show']]);//resource, cree automatiquement toutes les routes crud
+
+    Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function()
     {
         Route::resource('articles', 'ArticlesController');//resource, cree automatiquement toutes les routes crud
+//        Route::resource('addPictures', 'AddPicturesController');
     });
+
+
 //               url     ,  controller
     Route::resource('users', 'UsersController');
 

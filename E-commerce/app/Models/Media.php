@@ -12,6 +12,8 @@ class Media extends Model {
     protected $fillable = ['id', 'name', 'path', 'description', 'type_media_id'];
 
 
+
+
     public $timestamps = false;
 
 }
