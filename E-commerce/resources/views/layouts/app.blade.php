@@ -35,6 +35,11 @@
         .box img {
             max-width: 350px;
         }
+
+        .box_table {
+            max-width: 80%;
+
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -68,7 +73,8 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/users/create') }}">Register</a></li>
-                        <li><a href="{{ route('admin.articles.index')}}">Add articles</a></li>
+                        <li><a href="{{ route('admin.articles.index') }}">Afficher article</a></li>
+                        <li><a href="{{ route('admin.articles.create')}}">Add articles</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

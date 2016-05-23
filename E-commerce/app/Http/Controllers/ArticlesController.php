@@ -22,24 +22,34 @@ class ArticlesController extends Controller
     {
         $articles = Article::all();
 
-//        $article = Article::find(20);
-//        dd($article->media[0]->path);
-        //var_dump($articles);
-
-//        return "toto";
         return view('articles.index', ['articles' => $articles]);
 
     }
 
-    public function show()
+    public function show($id)
     {
-        echo "accueil show article";
+        $articles = ContainArticle::all();
+
+        foreach($articles as $article)
+        {
+            if($article->article_id == $id)
+            {
+                if($article->language_id == 1)
+                {
+
+                    $view = $article;
+                }
+            }
+        }
+
+
+
+
+
+//        echo "accueil show article : ".$id;
+        return view('articles.show', ['article'=> $view]);
     }
 
-    public function destroy($article)
-    {
-        //TODO: destroy selected article
-    }
 
 
 }

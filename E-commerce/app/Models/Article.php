@@ -52,6 +52,11 @@ class Article extends Model {
         return $this->contain_article->first()->description;
     }
 
+    public function getLanguageAttribute()
+    {
+        return $this->contain_article->first()->language_id;
+    }
+
 
 
 

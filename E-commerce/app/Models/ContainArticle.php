@@ -11,6 +11,12 @@ class ContainArticle extends Model {
     protected $table = 'contain_articles';
     protected $fillable = ['id', 'title', 'subtitle', 'description', 'language_id', 'article_id'];
 
+    public function language()
+    {
+        return $this->belongsTo(Language::class);
+        //retour une relation
+    }
+
 
 
 }

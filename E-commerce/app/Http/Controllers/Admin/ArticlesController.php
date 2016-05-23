@@ -18,12 +18,21 @@ use App\Http\Controllers\Controller;
 
 class ArticlesController extends Controller
 {
+
+    public function index()
+    {
+        $articles = Article::all();
+
+
+
+        return view('admin/articles.index', ['articles' => $articles]);
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function create()
     {
         $categories = Category::all();
 
@@ -94,7 +103,6 @@ class ArticlesController extends Controller
 
         $articleMedia->save();
     }
-
 
 
     /**
