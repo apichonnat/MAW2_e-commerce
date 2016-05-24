@@ -5,7 +5,7 @@
     @foreach($articles as $article)
         <div class="box">
             <div class="">
-                <h2>{{ $article->title }}
+                <h2>{{ $article->data->first()->title}}
                     <br>
                     <small>{{ $article->subtitle}}</small>
                 </h2>

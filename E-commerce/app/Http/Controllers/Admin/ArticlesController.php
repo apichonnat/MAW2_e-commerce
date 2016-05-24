@@ -25,7 +25,7 @@ class ArticlesController extends Controller
 
 
 
-        return view('admin/articles.index', ['articles' => $articles]);
+        return view('admin/articles.index', ['articles' => $articles->sort()]);
     }
     /**
      * Display a listing of the resource.

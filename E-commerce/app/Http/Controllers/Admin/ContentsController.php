@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AddContentsController extends Controller
+class ContentsController extends Controller
 {
     public function store(Request $data)
     {
@@ -29,6 +29,7 @@ class AddContentsController extends Controller
     }
 
     public function edit($id)
+//    public function edit(Content $content)
     {
         $langs = Language::all();
 
@@ -46,6 +47,11 @@ class AddContentsController extends Controller
 
 
         return view('admin/articles.addcontents', ['idArticle' => $id, 'language' => $lang]);
+    }
+
+    public function destroy($id)
+    {
+        print_r("salut l'ami");
     }
 
 

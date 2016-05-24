@@ -7,6 +7,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <td>Id</td>
                         <td>Titre</td>
                         <td>Sous-Titre</td>
                         <td>Déscription</td>
@@ -17,17 +18,22 @@
                 </thead>
                 <tbody>
                     @foreach($articles as $article)
+                        @foreach($article->data as $value)
+
                         <tr>
-                            <td>{!! $article->title !!}</td>
-                            <td>{!! $article->subtitle !!}</td>
-                            <td>{!! $article->description !!}</td>
-                            <td>{!! $article->language !!}</td>
+                            <td>{!! $article->id !!}</td>
+                            <td>{!! $value->title !!}</td>
+                            <td>{!! $value->subtitle !!}</td>
+                            <td>{!! $value->description !!}</td>
+                            <td>{!! $value->language->name !!}</td>
                             <td>{!! $article->state !!}</td>
                             <td>
-                                <a href="{{ route('admin.addPictures.edit', ['id' => $article->id])}}">Add Picture</a>
-                                <a href="{{ route('admin.addContents.edit', ['id' => $article->id])}}">Add Content</a>
+                                <a href="{{ route('admin.pictures.edit', ['id' => $article->id])}}">Add Picture</a>
+                                <a href="{{ route('admin.contents.edit', ['id' => $article->id])}}">Add Content</a>
+                                <a href="{{ route('admin.contents.destroy', ['id' => $article->id])}}">Del Content</a>
                             </td>
                         </tr>
+                        @endforeach
                     @endforeach
                 </tbody>
             </table>

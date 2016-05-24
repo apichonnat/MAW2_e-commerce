@@ -37,9 +37,15 @@ class Article extends Model {
 
 
 
-    public function getTitleAttribute()
+    public function getDataAttribute()
     {
-        return $this->contain_article->first()->title;
+
+//        foreach($this->contain_article as $value)
+//        {
+//            $tab[] = $value->title;
+//        }
+//        return $tab;
+        return $this->contain_article;
     }
 
     public function getSubtitleAttribute()

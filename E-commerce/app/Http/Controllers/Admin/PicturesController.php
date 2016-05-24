@@ -11,7 +11,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 
-class AddPicturesController extends Controller
+class PicturesController extends Controller
 {
     public function index()
     {

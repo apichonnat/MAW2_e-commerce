@@ -4,7 +4,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <p><h2>Ajouter un contenu pour un article</h2></p>
-        {!! Form::open(['route' => 'admin.addContents.store']) !!}
+        {!! Form::open(['route' => 'admin.contents.store']) !!}
 
         <div class="form-group">
             {!! Form::Label('title', 'Titre') !!}

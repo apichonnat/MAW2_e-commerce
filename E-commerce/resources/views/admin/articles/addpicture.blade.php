@@ -4,7 +4,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <p><h2>Ajouter une image pour l'article ""</h2></p>
-        {!! Form::open(['route' => 'admin.addPictures.store', 'enctype' => 'multipart/form-data']) !!}
+        {!! Form::open(['route' => 'admin.pictures.store', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {!! Form::Label('data', 'Image') !!}
             {!! Form::file('image') !!}
