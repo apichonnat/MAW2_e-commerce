@@ -40,6 +40,7 @@ class PicturesController extends Controller
         $articlemedia->article_id = $data->idArticle;
 
         $articlemedia->save();
+        return redirect()->route('admin.articles.index');
     }
 
     public function update()

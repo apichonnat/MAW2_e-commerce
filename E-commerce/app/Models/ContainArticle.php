@@ -17,6 +17,11 @@ class ContainArticle extends Model {
         //retour une relation
     }
 
+    public function article()
+    {
+        return $this->belongsTo(Article::class);
+    }
+
 
 
 }

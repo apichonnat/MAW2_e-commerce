@@ -23,8 +23,6 @@ class ArticlesController extends Controller
     {
         $articles = Article::all();
 
-
-
         return view('admin/articles.index', ['articles' => $articles->sort()]);
     }
     /**
@@ -102,6 +100,7 @@ class ArticlesController extends Controller
         $articleMedia->article_id = $article->id;
 
         $articleMedia->save();
+        return redirect()->route('admin.articles.index');
     }
 
 

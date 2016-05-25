@@ -24,7 +24,7 @@ class ContentsController extends Controller
 
             $contentArticle->save();
 
-
+        return redirect()->route('admin.articles.index');
 
     }
 
@@ -35,23 +35,24 @@ class ContentsController extends Controller
 
         //TODO: Faire un verification pour eviter que l'utilisateur puisse mettre une langue qui existe déja
 
-
-
-
-
         foreach($langs as $value)
         {
             $lang[] = array($value->id => $value->name);
         }
-
-
 
         return view('admin/articles.addcontents', ['idArticle' => $id, 'language' => $lang]);
     }
 
     public function destroy($id)
     {
-        print_r("salut l'ami");
+        $contentArticle = ContainArticle::all();
+//        if(count($contentArticle->article_id-)){}
+        $contentArticle->state;
+        //TODO: Faire un système qui permet de supprimer l'article si le dernier contenu est supprimé
+        //TODO: Faire egalement un suppression des id de l'article si supprimer dans la table media_article
+        ContainArticle::destroy($id);
+        return redirect()->route('admin.articles.index');
+
     }
 
 

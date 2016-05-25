@@ -13,7 +13,8 @@
                         <td>Déscription</td>
                         <td>langues</td>
                         <td>Statue</td>
-                        <td>Modification</td>
+                        <td>Add</td>
+                        <td>Del</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,9 +29,13 @@
                             <td>{!! $value->language->name !!}</td>
                             <td>{!! $article->state !!}</td>
                             <td>
-                                <a href="{{ route('admin.pictures.edit', ['id' => $article->id])}}">Add Picture</a>
-                                <a href="{{ route('admin.contents.edit', ['id' => $article->id])}}">Add Content</a>
-                                <a href="{{ route('admin.contents.destroy', ['id' => $article->id])}}">Del Content</a>
+                                <a href="{{ route('admin.pictures.edit', ['id' => $article->id])}}"><span class="glyphicon glyphicon-picture" aria-hidden="true"/></a>
+                                <a href="{{ route('admin.contents.edit', ['id' => $article->id])}}"><span class="glyphicon glyphicon-text-background" aria-hidden="true"/></a>
+                            </td>
+                            <td>
+                                {!! Form::open(['route' => ['admin.contents.destroy', $value->id], 'method' => 'delete']) !!}
+                                {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                         @endforeach
