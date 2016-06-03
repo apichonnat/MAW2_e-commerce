@@ -49,7 +49,7 @@
             <div class="form-group">
                 {!! Form::submit('Submit', ['class' => 'btn btn-default']) !!}
             </div>
-            {!! Form::close() !!}
+        {!! Form::close() !!}
     </div>
     <div class="col-md-2"></div>
 

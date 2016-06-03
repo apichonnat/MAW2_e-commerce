@@ -15,11 +15,11 @@
                 <p>{!! $article->description !!}</p>
             </div>
             <div class="">
-                {!! link_to('articles/'.$article->id) !!}
-                {{--mauvais--}}
+                <a href="{{ route('articles.show', ['id' => $article->id])}}">View</a>
             </div>
         </div>
     @endforeach
+
 
 @stop
 

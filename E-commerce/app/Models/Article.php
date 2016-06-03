@@ -1,6 +1,8 @@
 <?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Support\Facades\DB;
+use DB;
 
 class Article extends Model {
 
@@ -27,6 +29,12 @@ class Article extends Model {
 //        return $this->belongsToMany(Media::class);
         return $this->belongsToMany(Media::class);
     }
+
+    public function languages()
+    {
+        return Language::whereIn('id', DB::table('languages')->leftJoin('contain_articles', 'languages.id', '=', 'contain_articles.language_id')->select('languages.id')->where('contain_articles.article_id', '=', $this->id)->get());
+    }
+
 
     public function scopeThumbnail($query)
     {

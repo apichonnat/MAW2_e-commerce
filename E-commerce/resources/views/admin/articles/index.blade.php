@@ -13,7 +13,7 @@
                         <td>Déscription</td>
                         <td>langues</td>
                         <td>Statue</td>
-                        <td>Add</td>
+                        <td>Modif</td>
                         <td>Del</td>
                     </tr>
                 </thead>
@@ -30,7 +30,8 @@
                             <td>{!! $article->state !!}</td>
                             <td>
                                 <a href="{{ route('admin.pictures.edit', ['id' => $article->id])}}"><span class="glyphicon glyphicon-picture" aria-hidden="true"/></a>
-                                <a href="{{ route('admin.contents.edit', ['id' => $article->id])}}"><span class="glyphicon glyphicon-text-background" aria-hidden="true"/></a>
+                                <a href="{{ route('admin.articles.edit', ['id' => $article->id])}}"><span class="glyphicon glyphicon-text-background" aria-hidden="true"/></a>
+                                <a href="{{ route('admin.contents.edit', ['id' => $value->id])}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"/></a>
                             </td>
                             <td>
                                 {!! Form::open(['route' => ['admin.contents.destroy', $value->id], 'method' => 'delete']) !!}
@@ -45,7 +46,6 @@
         </div>
     </div>
     <div class="col-md-1"></div>
-
 @stop
 
 

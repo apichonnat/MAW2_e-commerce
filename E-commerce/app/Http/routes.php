@@ -39,15 +39,15 @@ Route::group(['middleware' => ['web']], function ()
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function()
     {
         Route::resource('articles', 'ArticlesController');//resource, cree automatiquement toutes les routes crud
-//        Route::resource('users', 'UsersController');
+        Route::resource('users', 'UsersController');
         Route::resource('pictures', 'PicturesController');
         Route::resource('contents', 'ContentsController');
+
     });
 
 
 //               url     ,  controller
     Route::resource('users', 'UsersController');
-
     Route::resource('order', 'OrdersController');
 
     Route::auth();

@@ -67,14 +67,23 @@
                     <li><a href="{{ route('articles.index') }}">Galerie</a></li>
                 </ul>
 
+
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('admin.articles.index') }}">Show articles</a></li>
+                            <li><a href="{{ route('admin.articles.create')}}">Add article</a></li>
+                            <li><a href="{{ route('admin.users.index')}}">Show Users</a></li>
+                        </ul>
+                    </li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/users/create') }}">Register</a></li>
-                        <li><a href="{{ route('admin.articles.index') }}">Afficher article</a></li>
-                        <li><a href="{{ route('admin.articles.create')}}">Add articles</a></li>
+
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

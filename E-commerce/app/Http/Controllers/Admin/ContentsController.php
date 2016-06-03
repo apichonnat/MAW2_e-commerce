@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\ContainArticle;
+use App\Models\Article;
 use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -29,25 +30,17 @@ class ContentsController extends Controller
     }
 
     public function edit($id)
-//    public function edit(Content $content)
     {
-        $langs = Language::all();
+        $content = ContainArticle::find($id);
 
-        //TODO: Faire un verification pour eviter que l'utilisateur puisse mettre une langue qui existe déja
-
-        foreach($langs as $value)
-        {
-            $lang[] = array($value->id => $value->name);
-        }
-
-        return view('admin/articles.addcontents', ['idArticle' => $id, 'language' => $lang]);
+        return view('admin/articles.editcontent', ['content' => $content]);
     }
 
     public function destroy($id)
     {
         $contentArticle = ContainArticle::all();
 //        if(count($contentArticle->article_id-)){}
-        $contentArticle->state;
+//        $contentArticle->state;
         //TODO: Faire un système qui permet de supprimer l'article si le dernier contenu est supprimé
         //TODO: Faire egalement un suppression des id de l'article si supprimer dans la table media_article
         ContainArticle::destroy($id);

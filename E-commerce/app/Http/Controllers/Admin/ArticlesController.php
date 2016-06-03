@@ -25,10 +25,9 @@ class ArticlesController extends Controller
 
         return view('admin/articles.index', ['articles' => $articles->sort()]);
     }
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -59,10 +58,8 @@ class ArticlesController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $data
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $data)
     {
@@ -115,15 +112,39 @@ class ArticlesController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
+//    public function edit(Content $content)
     {
-        //
+        $langs = Language::all()->diff(Article::find($id)->languages());
+
+        /*
+        foreach ($contents as $content)
+        {
+//            var_dump($content->article_id);
+//            var_dump($id);
+            if($content->article_id == $id)
+            {
+                $langagueid[] = array($content->language_id => $content->language->name);
+            }
+
+        }
+        */
+
+        //TODO: Faire un verification pour eviter que l'utilisateur puisse mettre une langue qui existe déja
+
+        foreach($langs as $value)
+        {
+            $lang[] = array($value->id => $value->name);
+        }
+
+        //var_dump($lang);
+        //var_dump($langagueid);
+
+        //var_dump(array_diff_key($lang, $langagueid));
+
+        //die();
+
+        return view('admin/articles.addcontents', ['idArticle' => $id, 'language' => $lang]);
     }
 
     /**

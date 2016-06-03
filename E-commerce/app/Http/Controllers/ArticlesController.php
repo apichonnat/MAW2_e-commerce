@@ -28,26 +28,12 @@ class ArticlesController extends Controller
 
     public function show($id)
     {
-        $articles = ContainArticle::all();
+        $article = Article::find($id);
 
-        foreach($articles as $article)
-        {
-            if($article->article_id == $id)
-            {
-                if($article->language_id == 1)
-                {
+//            var_dump($article->media);
+//        var_dump($article->contain_article->where('language_id', '2'));
 
-                    $view = $article;
-                }
-            }
-        }
-
-
-
-
-
-//        echo "accueil show article : ".$id;
-        return view('articles.show', ['article'=> $view]);
+        return view('articles.show', ['article'=> $article->contain_article->first(), 'media'=> $article->media]);
     }
 
 
