@@ -56,6 +56,11 @@ class Article extends Model {
         return $this->contain_article;
     }
 
+    public function getTitleAttribute()
+    {
+        return $this->contain_article->first()->title;
+    }
+
     public function getSubtitleAttribute()
     {
         return $this->contain_article->first()->subtitle;

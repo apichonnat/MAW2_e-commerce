@@ -35,6 +35,9 @@ Route::group(['middleware' => ['web']], function ()
     Route::get('home', 'home@index');
     //Route::get('article', 'articles@index');//articles = controller / index = action(nom fonction dans le controller)
     Route::resource('articles', 'ArticlesController', ['only'=>['index', 'show']]);//resource, cree automatiquement toutes les routes crud
+    Route::resource('orders', 'OrdersController');
+
+
 
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function()
     {
@@ -48,7 +51,7 @@ Route::group(['middleware' => ['web']], function ()
 
 //               url     ,  controller
     Route::resource('users', 'UsersController');
-    Route::resource('order', 'OrdersController');
+
 
     Route::auth();
 //

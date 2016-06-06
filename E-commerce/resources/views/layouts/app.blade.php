@@ -80,9 +80,10 @@
                         </ul>
                     </li>
                     <!-- Authentication Links -->
-                    @if (Auth::guest())
+                @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/users/create') }}">Register</a></li>
+                        <li><a href="{{ route('orders.index')}}"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
 
                     @else
                         <li class="dropdown">

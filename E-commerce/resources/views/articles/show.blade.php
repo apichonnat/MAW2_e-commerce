@@ -22,7 +22,10 @@
             <p>{!! $article->description !!}</p>
         </div>
         <div class="">
-            {{--mauvais--}}
+            {!! Form::open(['route' => ['orders.store'], 'method' => 'post']) !!}
+            {!! Form::hidden('idArticle', $id) !!}
+            {!! Form::submit('Add Cart', ['class'=>'btn btn-primary']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
     </div>

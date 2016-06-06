@@ -33,7 +33,7 @@ class ArticlesController extends Controller
 //            var_dump($article->media);
 //        var_dump($article->contain_article->where('language_id', '2'));
 
-        return view('articles.show', ['article'=> $article->contain_article->first(), 'media'=> $article->media]);
+        return view('articles.show', ['article'=> $article->contain_article->first(), 'media'=> $article->media, 'id' => $id]);
     }
 
 
