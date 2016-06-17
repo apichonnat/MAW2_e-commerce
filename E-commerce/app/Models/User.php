@@ -12,7 +12,7 @@ class User extends Model {
     public function language()
     {
         return $this->belongsTo(Language::class);
-        //retour une relation
+        //retourn une relation
     }
 
     public function addresse1()

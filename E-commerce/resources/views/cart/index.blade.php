@@ -7,8 +7,8 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <td>Titre</td>
-                    <td>Sous-Titre</td>
+                    <td>{{ trans('message.title') }}</td>
+                    <td>{{ trans('message.subtitle') }}</td>
 
                 </tr>
                 </thead>

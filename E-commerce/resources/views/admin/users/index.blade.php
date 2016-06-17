@@ -28,7 +28,7 @@
                         <td>{!! $user->last_name !!}</td>
                         <td>{!! $user->pseudo !!}</td>
                         <td>{!! $user->mail !!}</td>
-                        <td>{!! $user->language !!}</td>
+                        <td>{!! $user->language->name !!}</td>
                         <td>{!! $user->validate !!}</td>
                         <td>
                             <a href="{{ route('admin.users.edit', ['id' => $user->id])}}"><span class="glyphicon glyphicon-text-background" aria-hidden="true"/></a>

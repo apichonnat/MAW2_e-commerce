@@ -8,13 +8,13 @@
                 <thead>
                     <tr>
                         <td>Id</td>
-                        <td>Titre</td>
-                        <td>Sous-Titre</td>
-                        <td>Déscription</td>
-                        <td>langues</td>
-                        <td>Statue</td>
-                        <td>Modif</td>
-                        <td>Del</td>
+                        <td>{{ trans('message.title') }}</td>
+                        <td>{{ trans('message.subtitle') }}</td>
+                        <td>{{ trans('message.description') }}</td>
+                        <td>{{ trans('message.language') }}</td>
+                        <td>{{ trans('message.state') }}</td>
+                        <td>{{ trans('message.modif') }}</td>
+                        <td>{{ trans('message.del') }}</td>
                     </tr>
                 </thead>
                 <tbody>
